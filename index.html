@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Das Rad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="shapes" aria-hidden="true">
+      <span class="shape circle"></span>
+      <span class="shape square"></span>
+      <span class="shape triangle"></span>
+    </div>
+    <h1>Das<br><span>Rad</span></h1>
+    <p class="kicker">A spinning wheel<br>in the Bauhaus manner</p>
+  </header>
+
+  <main class="stage">
+    <section class="wheel-col">
+      <div class="wheel-frame">
+        <div class="pointer" aria-hidden="true"></div>
+        <div class="rotor" id="rotor">
+          <svg id="wheel" viewBox="-100 -100 200 200" role="img" aria-label="Wheel of choices"></svg>
+        </div>
+        <button class="hub" id="hub" aria-label="Spin the wheel"></button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <button class="spin" id="spin">Spin</button>
+
+      <div class="result" id="result" aria-live="polite">
+        <span class="result-label">Result</span>
+        <span class="result-value" id="resultValue">—</span>
+      </div>
+
+      <div class="block">
+        <h2>Choices</h2>
+        <form class="add" id="addForm" autocomplete="off">
+          <input id="addInput" type="text" maxlength="40" placeholder="Add a choice" aria-label="New choice">
+          <button type="submit" aria-label="Add choice">+</button>
+        </form>
+        <ol class="choices" id="choices"></ol>
+      </div>
+
+      <div class="block history-block">
+        <h2>History</h2>
+        <ol class="history" id="history"></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <span>Bauhaus · 1919 — Weimar · Dessau · Berlin</span>
+    <span class="motto">Form follows function<span class="stop" id="stop">.</span></span>
+  </footer>
+
+  <dialog class="workshop" id="workshop" aria-labelledby="workshopTitle">
+    <div class="workshop-head">
+      <h2 id="workshopTitle">Werkstatt</h2>
+      <p>Weights decide where the wheel lands. The slices keep looking equal.</p>
+    </div>
+    <ol class="weights" id="weights"></ol>
+    <div class="workshop-actions">
+      <button type="button" class="ghost" id="equalize">Equalize</button>
+      <button type="button" id="closeWorkshop">Done</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
